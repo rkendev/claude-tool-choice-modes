@@ -30,23 +30,26 @@ shows the difference:
 
 ```
 [summary] same prompt, same tools, three different stop_reason patterns:
-  auto                  → ["end_turn"]                  (Claude skipped the tools)
+  auto                  → may call tools or skip them; this run picked get_city_population
   any                   → ["tool_use", "end_turn"]      (Claude picked get_city_population)
-  tool:get_city_country → ["tool_use", "end_turn"]      (forced to use the wrong tool)
+  tool:get_city_country → ["tool_use", "end_turn"]      (forced to use the named tool)
 ```
 
 Why this matters:
 
-- **`auto`** lets Claude decide. Quality of the tool *description* is
-  what routes Claude correctly when there are multiple tools — see the
-  "Do NOT use for ..." anti-instructions in `tools.py`.
+- **`auto`** lets Claude decide. For a population question against a
+  population tool, Claude usually picks the tool — but with a
+  clearly-described tool that doesn't fit, or a question Claude can
+  answer from training, it may skip. Tool description quality routes
+  the decision — see the "Do NOT use for ..." anti-instructions in
+  `tools.py`.
 - **`any`** forces *some* tool call but lets Claude pick which. Used
   when the architect knows a tool is needed but doesn't want to constrain
   the model's choice across an ambiguous prompt.
 - **`{"type": "tool", "name": "X"}`** forces a *specific* tool. The
-  third demo intentionally forces the wrong tool (`get_city_country`
-  for a population question) to show how the named mode overrides
-  Claude's natural routing.
+  third demo intentionally forces `get_city_country` for a population
+  question to show how the named mode overrides Claude's natural
+  routing.
 
 `make check` runs the showcase tests offline against committed VCR
 cassettes — no API key required for CI.

@@ -102,7 +102,12 @@ def test_choice_specific_tool_forces_named(monkeypatch: pytest.MonkeyPatch) -> N
         tool_choice={"type": "tool", "name": "get_city_country"},
     )
     assert result.mode_label == "tool:get_city_country"
-    assert result.tool_calls[0][0] == "get_city_country"
+    # `disable_parallel_tool_use` is not set, so Claude can return
+    # multiple tool_use blocks in one response (the cassette shows
+    # country + population called in parallel). Order isn't guaranteed
+    # across re-records — assert the named tool appears anywhere in
+    # the call list rather than pinning it to index 0.
+    assert "get_city_country" in [c[0] for c in result.tool_calls]
     assert result.stop_reasons[-1] == "end_turn"
 
 
