@@ -1,0 +1,251 @@
+interactions:
+- request:
+    body: '{"max_tokens":1024,"messages":[{"role":"user","content":"What''s the population
+      of Tokyo?"}],"model":"claude-haiku-4-5-20251001","tool_choice":{"type":"tool","name":"get_city_country"},"tools":[{"name":"get_city_population","description":"Return
+      the most recent census population estimate for a major city as an integer. Use
+      this when the user asks how many people live in a city or how big a city is.
+      Do NOT use for non-population facts such as country, area, or timezone.","input_schema":{"type":"object","properties":{"city":{"type":"string","description":"The
+      city name, e.g. ''Tokyo''."}},"required":["city"],"additionalProperties":false}},{"name":"get_city_country","description":"Return
+      the country a major city is located in as a string. Use this when the user asks
+      which country a city is in. Do NOT use for population, area, or other non-country
+      facts.","input_schema":{"type":"object","properties":{"city":{"type":"string","description":"The
+      city name, e.g. ''Tokyo''."}},"required":["city"],"additionalProperties":false}}]}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1030'
+      Content-Type:
+      - application/json
+      Host:
+      - api.anthropic.com
+      User-Agent:
+      - Anthropic/Python 0.100.0
+      X-Stainless-Arch:
+      - x64
+      X-Stainless-Async:
+      - 'false'
+      X-Stainless-Lang:
+      - python
+      X-Stainless-OS:
+      - Linux
+      X-Stainless-Package-Version:
+      - 0.100.0
+      X-Stainless-Runtime:
+      - CPython
+      X-Stainless-Runtime-Version:
+      - 3.12.13
+      anthropic-version:
+      - '2023-06-01'
+      x-api-key:
+      - REDACTED
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-timeout:
+      - '600'
+    method: POST
+    uri: https://api.anthropic.com/v1/messages
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA5xSXUsDMRD8L3nuwV25o9VHUZGi0EopqEhIk+1dbC65JhullPvvboqH3wi+JTOz
+        O7PLHljrFBh2yqQRUUHWCL2NWZlV2TgfV0WeF2zEtCJBG2qeF3fXenVbb+z9U1meLePt2bIez2ak
+        wX0HSQUhiBoI8M4kQISgAwqLBElnEeh1+nAY9Oic4THA4JL+kXwucBtW6vx8Mb9q7K68kQt9pV5I
+        ZUWb6mpALjXuuXTRot+nettF6n1gCSfJ0m33jvVkK4wBn5g3U6U9SGR9P/ozx2pxootZXRWixPl4
+        dwmwthPxQ47OddEI1M7+L8rjiAV0HfcgAvX4lOhIBNhFsJKKbDTmDVSAQpswYPG4e+p+DMDRbcES
+        OS2nyVo2wCX1TyH5Z0U+8ESr37ihNhlA10ALXhhetd/172zRfGVpCy7iR2hS0DTgn7UEjjqth6WL
+        UcKr4y434NPgvAZHlHXIxTNNLdZ0YH3/CgAA//8DAMIiH/XDAgAA
+    headers:
+      CF-RAY:
+      - 9f933b95bb35e856-FRA
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 09 May 2026 19:50:23 GMT
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      X-Robots-Tag:
+      - none
+      anthropic-organization-id:
+      - ecdf3661-18a6-44ff-a45e-1ce201da549d
+      anthropic-ratelimit-input-tokens-limit:
+      - '50000'
+      anthropic-ratelimit-input-tokens-remaining:
+      - '49000'
+      anthropic-ratelimit-input-tokens-reset:
+      - '2026-05-09T19:50:24Z'
+      anthropic-ratelimit-output-tokens-limit:
+      - '10000'
+      anthropic-ratelimit-output-tokens-remaining:
+      - '10000'
+      anthropic-ratelimit-output-tokens-reset:
+      - '2026-05-09T19:50:23Z'
+      anthropic-ratelimit-requests-limit:
+      - '50'
+      anthropic-ratelimit-requests-remaining:
+      - '47'
+      anthropic-ratelimit-requests-reset:
+      - '2026-05-09T19:50:25Z'
+      anthropic-ratelimit-tokens-limit:
+      - '60000'
+      anthropic-ratelimit-tokens-remaining:
+      - '59000'
+      anthropic-ratelimit-tokens-reset:
+      - '2026-05-09T19:50:23Z'
+      cf-cache-status:
+      - DYNAMIC
+      request-id:
+      - req_011CasaNCyxijm5AdctJYBs4
+      set-cookie:
+      - _cfuvid=t2Zl12cJfjM6zo6GVOIBR0GXL54LdUoJzoZlWHjuUVI-1778356222.3511786-1.0.1.1-CVMu1dwLR_S7e2PUJCZUobSneSnCqe1KK7768ZLweRg;
+        HttpOnly; SameSite=None; Secure; Path=/; Domain=api.anthropic.com
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      traceresponse:
+      - 00-b776afde155a9adf37996e299ac63822-93dcaa976add63fc-01
+      vary:
+      - Accept-Encoding
+      x-envoy-upstream-service-time:
+      - '648'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"max_tokens":1024,"messages":[{"role":"user","content":"What''s the population
+      of Tokyo?"},{"role":"assistant","content":[{"id":"toolu_01EtksVdDDQPHhnq4McQiHdw","caller":{"type":"direct"},"input":{"city":"Tokyo"},"name":"get_city_country","type":"tool_use"},{"id":"toolu_01VQ9i1Jg51a4tP2qFeebn7a","caller":{"type":"direct"},"input":{"city":"Tokyo"},"name":"get_city_population","type":"tool_use"}]},{"role":"user","content":[{"type":"tool_result","tool_use_id":"toolu_01EtksVdDDQPHhnq4McQiHdw","content":"Japan"},{"type":"tool_result","tool_use_id":"toolu_01VQ9i1Jg51a4tP2qFeebn7a","content":"14094034"}]}],"model":"claude-haiku-4-5-20251001","tool_choice":{"type":"auto"},"tools":[{"name":"get_city_population","description":"Return
+      the most recent census population estimate for a major city as an integer. Use
+      this when the user asks how many people live in a city or how big a city is.
+      Do NOT use for non-population facts such as country, area, or timezone.","input_schema":{"type":"object","properties":{"city":{"type":"string","description":"The
+      city name, e.g. ''Tokyo''."}},"required":["city"],"additionalProperties":false}},{"name":"get_city_country","description":"Return
+      the country a major city is located in as a string. Use this when the user asks
+      which country a city is in. Do NOT use for population, area, or other non-country
+      facts.","input_schema":{"type":"object","properties":{"city":{"type":"string","description":"The
+      city name, e.g. ''Tokyo''."}},"required":["city"],"additionalProperties":false}}]}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1519'
+      Content-Type:
+      - application/json
+      Cookie:
+      - _cfuvid=t2Zl12cJfjM6zo6GVOIBR0GXL54LdUoJzoZlWHjuUVI-1778356222.3511786-1.0.1.1-CVMu1dwLR_S7e2PUJCZUobSneSnCqe1KK7768ZLweRg
+      Host:
+      - api.anthropic.com
+      User-Agent:
+      - Anthropic/Python 0.100.0
+      X-Stainless-Arch:
+      - x64
+      X-Stainless-Async:
+      - 'false'
+      X-Stainless-Lang:
+      - python
+      X-Stainless-OS:
+      - Linux
+      X-Stainless-Package-Version:
+      - 0.100.0
+      X-Stainless-Runtime:
+      - CPython
+      X-Stainless-Runtime-Version:
+      - 3.12.13
+      anthropic-version:
+      - '2023-06-01'
+      x-api-key:
+      - REDACTED
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-timeout:
+      - '600'
+    method: POST
+    uri: https://api.anthropic.com/v1/messages
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA3SRT4vbMBDFv4rQMTjFziZp17cW2sPS05KFQiliVprYamSNKo2WhJDv3nHY0H/0
+        IMu839PMPOasJ3IYdK9tgOpwOYI/1OV6uVmu2tWma9tON9o7MUxlMG23HR7Lfvtpm78/fUjju/df
+        jrvPq4/i4VPC2YWlwIAiZAqzAKX4whBZJEuRUf76r+ebn/E4k+vV692IKlGqAdhTVLRXOzqcqFEP
+        kCAqXxSklOnoJ2AMJ7VYdOumvZdzt14sVEJKARVYS9n5OCgmxVJyosIqo5XeSj6lFoWFr0Xe6Mu3
+        RhemZDJCoShTYHSGa476FRT8UTFaGTfWEF5Fhww+lJtWr6n7s/YxVTZMB+mj+3uZT1uwIxor9edU
+        5k9He+OC3f/Y7e3cANOIE2YIZjP96/9Fu/Fvemk0Vf5dWr2VNJhfvEXDHrOEn3flILt57XGPeQ5u
+        BiRBkdjAi6SGZ1nt5fITAAD//wMAmVCN+j0CAAA=
+    headers:
+      CF-RAY:
+      - 9f933b9acb6edbfb-FRA
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 09 May 2026 19:50:23 GMT
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      X-Robots-Tag:
+      - none
+      anthropic-organization-id:
+      - ecdf3661-18a6-44ff-a45e-1ce201da549d
+      anthropic-ratelimit-input-tokens-limit:
+      - '50000'
+      anthropic-ratelimit-input-tokens-remaining:
+      - '49000'
+      anthropic-ratelimit-input-tokens-reset:
+      - '2026-05-09T19:50:25Z'
+      anthropic-ratelimit-output-tokens-limit:
+      - '10000'
+      anthropic-ratelimit-output-tokens-remaining:
+      - '10000'
+      anthropic-ratelimit-output-tokens-reset:
+      - '2026-05-09T19:50:24Z'
+      anthropic-ratelimit-requests-limit:
+      - '50'
+      anthropic-ratelimit-requests-remaining:
+      - '47'
+      anthropic-ratelimit-requests-reset:
+      - '2026-05-09T19:50:26Z'
+      anthropic-ratelimit-tokens-limit:
+      - '60000'
+      anthropic-ratelimit-tokens-remaining:
+      - '59000'
+      anthropic-ratelimit-tokens-reset:
+      - '2026-05-09T19:50:24Z'
+      cf-cache-status:
+      - DYNAMIC
+      request-id:
+      - req_011CasaNGRq65j8bJydFKpQE
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      traceresponse:
+      - 00-ca5f0037398f0cbec33ff9c033dc90af-9f07aed22a8363c8-01
+      vary:
+      - Accept-Encoding
+      x-envoy-upstream-service-time:
+      - '645'
+    status:
+      code: 200
+      message: OK
+version: 1

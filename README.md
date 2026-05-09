@@ -17,6 +17,40 @@ small-projects portfolio. Companion to
 > Repo bootstrapped from my own `roy-ai-template@v0.5.0` starter; the
 > tool_choice showcase is original.
 
+## Tool choice modes
+
+```bash
+ANTHROPIC_API_KEY=sk-ant-... \
+  uv run python -m claude_tool_choice_modes \
+    "What's the population of Tokyo?"
+```
+
+Three round-trips against the same two tools. The summary at the end
+shows the difference:
+
+```
+[summary] same prompt, same tools, three different stop_reason patterns:
+  auto                  → ["end_turn"]                  (Claude skipped the tools)
+  any                   → ["tool_use", "end_turn"]      (Claude picked get_city_population)
+  tool:get_city_country → ["tool_use", "end_turn"]      (forced to use the wrong tool)
+```
+
+Why this matters:
+
+- **`auto`** lets Claude decide. Quality of the tool *description* is
+  what routes Claude correctly when there are multiple tools — see the
+  "Do NOT use for ..." anti-instructions in `tools.py`.
+- **`any`** forces *some* tool call but lets Claude pick which. Used
+  when the architect knows a tool is needed but doesn't want to constrain
+  the model's choice across an ambiguous prompt.
+- **`{"type": "tool", "name": "X"}`** forces a *specific* tool. The
+  third demo intentionally forces the wrong tool (`get_city_country`
+  for a population question) to show how the named mode overrides
+  Claude's natural routing.
+
+`make check` runs the showcase tests offline against committed VCR
+cassettes — no API key required for CI.
+
 ## Inherited template scaffolding (background)
 
 ## Quick start
