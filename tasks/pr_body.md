@@ -19,9 +19,10 @@ CCA-F D2 has two Sev-≥4 gaps this artifact closes:
 
 ## How verified
 
-- `make check` green: **228 tests** passing on baseline 219 + 9 new
-  (`test_get_city_unknown_raises` covers both tools in one function;
-  the prompt's "8 new tests" rounded down — actual function count is 9).
+- `make check` green: **238 tests** passing on baseline 219 + 9 showcase
+  + 10 CLI = 19 new. The CLI tests were added after CI rejected the
+  first push for coverage on `__main__.py` (CI enforces
+  `--cov-fail-under=95`; project total is now 99.68%).
 - VCR cassettes for all three modes redacted (`grep -i sk-ant tests/unit/cassettes/**/*.yaml` returns empty).
 - Manual end-to-end: `uv run python -m claude_tool_choice_modes "What's the population of Tokyo?"` produces the three-mode summary block.
 - CI green on this PR.
