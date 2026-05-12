@@ -7,8 +7,8 @@ showcase of the three `tool_choice` modes (`auto`, `any`, and
 `{"type": "tool", "name": ...}`) running the same prompt against the
 same tools and printing the resulting `stop_reason` for each.
 
-Built as Artifact C of a Claude Certified Architect Foundations
-small-projects portfolio. Companion to
+Built as Artifact C of a small-projects portfolio exploring Claude's
+tool-use and MCP fundamentals. Companion to
 [claude-mcp-server-minimal](https://github.com/rkendev/claude-mcp-server-minimal)
 (Artifact A) and
 [claude-tools-roundtrip-playground](https://github.com/rkendev/claude-tools-roundtrip-playground)
